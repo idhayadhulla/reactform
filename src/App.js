@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Formfields from './Formfields';
 
-function App() {
+
+const App = () => {
+  // Here, you can make a fetch request to your server endpoint
+  // Example:
+  // fetch('http://localhost:3000/api/register', {
+  //   method: 'POST',
+  //   headers: {
+  //     'Content-Type': 'application/json',
+  //   },
+  //   body: JSON.stringify(formData),
+  // })
+  //   .then((res) => res.json())
+  //   .then((data) => {
+  //     console.log('Server Response:', data);
+  //   })
+  //   .catch((error) => console.error('Error submitting form:', error));
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Formfields/>
   );
-}
+};
 
 export default App;

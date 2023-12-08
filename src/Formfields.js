@@ -57,6 +57,8 @@ const Formfields = () => {
     cpassword: '',
   });
 
+  const [submittedData, setSubmittedData] = useState(null);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
@@ -65,7 +67,7 @@ const Formfields = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Form Data:', formData);
-
+setSubmittedData(formData);
     
     if (validateInputs()) {
       
@@ -225,6 +227,17 @@ const Formfields = () => {
 
         <button type="submit">Register</button>
       </form>
+
+      {submittedData && (
+        <div>
+          <h2>Submitted Data</h2>
+          <p><strong>Full Name:</strong> {submittedData.fullname}</p>
+          <p><strong>Username:</strong> {submittedData.username}</p>
+          <p><strong>Email:</strong> {submittedData.email}</p>
+          <p><strong>Phone Number:</strong> {submittedData.number}</p>
+          <p><strong>Gender:</strong> {submittedData.gender}</p>
+        </div>
+      )}
     </div>
   );
 };

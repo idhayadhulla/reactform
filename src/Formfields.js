@@ -36,7 +36,6 @@ const RadioButton = ({ id, name, value, checked, onChange, label }) => {
   );
 };
 
-
 const Formfields = () => {
   const [formData, setFormData] = useState({
     fullname: '',
@@ -67,10 +66,9 @@ const Formfields = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Form Data:', formData);
-setSubmittedData(formData);
-    
+    setSubmittedData(formData);
+
     if (validateInputs()) {
-      
       console.log('Form submitted successfully!');
     }
   };
